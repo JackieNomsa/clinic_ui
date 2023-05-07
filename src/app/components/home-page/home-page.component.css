@@ -1,0 +1,17 @@
+.booking-form{
+    width: 80%;
+    margin: auto;
+    padding: 2em;
+}
+
+h2{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.buttons{
+    text-align: center;
+    width: 30%;
+    margin: auto;
+}

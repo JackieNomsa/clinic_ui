@@ -1,1 +1,34 @@
-<p>home-page works!</p>
+<form formGroupName="bookingForm" class="booking-form">
+  <h2>Book A Slot </h2>
+  <div class="form-group">
+    <label for="first-name">First Name</label>
+    <input id="first-name" type="text" formControlName="firstName" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="last-name">Last Name</label>
+    <input id="last-name" type="text" formControlName="lastName" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="identification">Type of Identification</label>
+    <select id="identification" formControlName="identification" class="form-control">
+      <option value=""></option>
+      <option value="id">ID</option>
+      <option value="passport">Passport</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="idNumber">ID/passport number</label>
+    <input id="id-number" type="text" formControlName="idNumber" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="date-of-birth">Date of Birth</label>
+    <input id="date-of-birth" type="date" formControlName="dateOfBirth" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" pattern="[0]{1}[1-9]{2}[0-9]{3}[0-9]{4}" formControlName="phone" class="form-control">
+  </div>
+  <div class="buttons">
+    <button type="submit" class="btn btn-primary">Book A Slot</button>
+  </div>
+</form>

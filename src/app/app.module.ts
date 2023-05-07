@@ -10,11 +10,12 @@ import { UsageComponent } from './components/usage/usage.component';
   declarations: [
     AppComponent,
     HomePageComponent,
-    UsageComponent
+    UsageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
