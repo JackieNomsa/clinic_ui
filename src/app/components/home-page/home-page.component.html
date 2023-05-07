@@ -1,4 +1,25 @@
-<form formGroupName="bookingForm" class="booking-form">
+<div class="welcome-page">
+  <button type="submit" class="btn btn-success" (click)="bookASlotToogle()">Book A Slot</button>
+  <button type="submit" class="btn btn-warning" (click)="getReferenceToogle()">Lost Reference</button>
+</div>
+
+<form formGroupName="bookingForm" class="booking-form" *ngIf="getReference">
+  <h2>Get My Reference</h2>
+  <div class="form-group">
+    <label for="idNumber">ID/passport number</label>
+    <input id="id-number" type="text" formControlName="idNumber" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="identification">Type of Identification</label>
+    <select id="identification" formControlName="identification" class="form-control">
+      <option value=""></option>
+      <option value="id">ID</option>
+      <option value="passport">Passport</option>
+    </select>
+  </div>
+</form>
+
+<form formGroupName="bookingForm" class="booking-form" *ngIf="bookAslot">
   <h2>Book A Slot </h2>
   <div class="form-group">
     <label for="first-name">First Name</label>

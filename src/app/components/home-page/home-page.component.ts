@@ -13,4 +13,19 @@ export class HomePageComponent {
     idNumber: new FormControl(''),
   });
 
+  bookAslot: boolean = false;
+  getReference: boolean = false;  
+
+  
+  public bookASlotToogle() :void{
+    this.bookAslot = true;
+    this.getReference = false;
+    console.log(this.bookAslot)
+  }
+
+  public getReferenceToogle() :void{
+    this.getReference = true;
+    this.bookAslot = false;
+    console.log(this.getReference)
+  }
 }
