@@ -15,17 +15,30 @@ export class HomePageComponent {
 
   bookAslot: boolean = false;
   getReference: boolean = false;  
+  cancelSlot: boolean = false;  
+  home: boolean = true
 
   
   public bookASlotToogle() :void{
     this.bookAslot = true;
     this.getReference = false;
+    this.cancelSlot = false;
+    this.home = false;
     console.log(this.bookAslot)
   }
 
   public getReferenceToogle() :void{
     this.getReference = true;
     this.bookAslot = false;
+    this.cancelSlot = false;
+    this.home = false;
     console.log(this.getReference)
+  }
+
+  public cancelSlotToogle() :void{
+    this.cancelSlot = true;
+    this.bookAslot = false;
+    this.getReference = false;
+    this.home = false
   }
 }
