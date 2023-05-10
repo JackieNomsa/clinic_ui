@@ -12,12 +12,11 @@
       <button type="submit" class="btn btn-success" (click)="bookASlotToogle()">Book A Slot</button>
     </div>
   </div>
-
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <p>...</p>
       <p class="card-text">If you have lost your reference number, you can request it again, You will need:</p>      <ul style="text-align:left; color:black">
-        <li>Id number</li>
+        <li>ID/passport number</li>
       </ul>
       <button type="submit" class="btn btn-warning" (click)="getReferenceToogle()">Lost Reference</button>
 
@@ -28,20 +27,14 @@
       <p>...</p>
       <p class="card-text">Cancel your booked slot if you can not make, so as to not hog the line, You will need:</p>
       <ul style="text-align:left; color:black">
-        <li>Reference number</li>
+        <li>ID/passport number</li>
       </ul>
       <button type="submit" class="btn btn-danger" (click)="cancelSlotToogle()">Cancel Slot</button>
     </div>
   </div>
-
 </div>
-
 <form formGroupName="bookingForm" class="booking-form" *ngIf="getReference and !bookAslot and !cancelSlot">
   <h2>Get My Reference</h2>
-  <div class="form-group">
-    <label for="idNumber">ID/passport number</label>
-    <input id="id-number" type="text" formControlName="idNumber" class="form-control">
-  </div>
   <div class="form-group">
     <label for="identification">Type of Identification</label>
     <select id="identification" formControlName="identification" class="form-control">
@@ -50,22 +43,29 @@
       <option value="passport">Passport</option>
     </select>
   </div>
+  <div class="form-group">
+    <label for="idNumber">ID/passport number</label>
+    <input id="id-number" type="text" formControlName="idNumber" class="form-control">
+  </div>
   <div class="buttons">
     <button type="submit" class="btn btn-primary">Get Reference</button>
   </div>
 </form>
-
 <form formGroupName="bookingForm" class="booking-form" *ngIf="cancelSlot and !bookAslot and !getReference">
   <h2>Cancel Booked Slot</h2>
   <div class="form-group">
-    <label for="idNumber">Reference Number</label>
-    <input id="id-number" type="text" formControlName="idNumber" class="form-control">
-  </div>
-  <div class="buttons">
-    <button type="submit" class="btn btn-primary">Cancel Booking</button>
+    <label for="identification">Type of Identification</label>
+    <select id="identification" formControlName="identification" class="form-control">
+      <option value=""></option>
+      <option value="id">ID</option>
+      <option value="passport">Passport</option>
+    </select>
+    <div class="form-group">
+      <label for="idNumber">ID/passport number</label>
+      <input id="id-number" type="text" formControlName="idNumber" class="form-control">
+    </div>
   </div>
 </form>
-
 <form formGroupName="bookingForm" class="booking-form" *ngIf="bookAslot and !getReference and !cancelSlot">
   <h2>Book A Slot </h2>
   <div class="form-group">
