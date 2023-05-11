@@ -20,4 +20,13 @@ export class BookingService{
     public getBooking(id: string) {
         return this.http.get<BookingModel>(`${this.url}/getById/${id}`);
     }
+
+  
+    public cancelSlot(id: string) {
+        return this.http.post(`${this.url}/delete/${id}`,"")
+    }
+
+    public updateSlot(bookingData: BookingModel) {
+        return this.http.post(`${this.url}/update`,bookingData);
+    }
 }
