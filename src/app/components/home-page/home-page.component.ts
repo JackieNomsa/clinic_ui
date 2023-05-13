@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { BookingModel } from 'src/app/model/booking-model';
+import { BookingService } from 'src/app/service/booking-service';
 
 @Component({
   selector: 'app-home-page',
@@ -40,5 +42,10 @@ export class HomePageComponent {
     this.bookAslot = false;
     this.getReference = false;
     this.home = false
+  }
+
+  
+  public bookSlot(booking: BookingModel) {
+    
   }
 }

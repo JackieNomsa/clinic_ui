@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { UsageComponent } from './components/usage/usage.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormGroup, FormControl } from '@angular/forms';
 
 
 @NgModule({
@@ -15,8 +14,7 @@ import { FormGroup, FormControl } from '@angular/forms';
     HomePageComponent,
     UsageComponent,
     FooterComponent,
-    FormControl,
-    FormGroup
+  
 
   ],
   imports: [
