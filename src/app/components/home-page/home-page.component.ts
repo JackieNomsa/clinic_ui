@@ -44,8 +44,28 @@ export class HomePageComponent {
     this.home = false
   }
 
+  public submitSlotBooking(){
+    //access for data, validate and call bookSlot
+    // if status returned is still waiting user has no time assigned and will receive an sms once a slot is available and assigned
+    // might add the option to update slot if it is done 24 hours before assigned slot
+
+  }
+
   
   public bookSlot(booking: BookingModel) {
     
   }
+
+  public cancelBookedSlot(id: string){
+    //validate id, check if slot exists and cancel it, return error if does not exist
+    // if success should inform user that slot is cancelled and if need be they can start booking from scratch
+
+  }
+
+  public getCurrentSlot(id: string){
+    //validate id, check if slot with id exixts esle return error
+    //if successful should display id, name, date and time to user
+  }
+
+
 }

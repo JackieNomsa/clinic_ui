@@ -15,10 +15,10 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <p>...</p>
-      <p class="card-text">If you have lost your reference number, you can request it again, You will need:</p>      <ul style="text-align:left; color:black">
+      <p class="card-text">If you do not remember your assigned slot, you can request it, You will need:</p>      <ul style="text-align:left; color:black">
         <li>ID/passport number</li>
       </ul>
-      <button type="submit" class="btn btn-warning" (click)="getReferenceToogle()">Lost Reference</button>
+      <button type="submit" class="btn btn-warning" (click)="getReferenceToogle()">Get Current Slot</button>
 
     </div>
   </div>
@@ -33,26 +33,10 @@
     </div>
   </div>
 </div>
-<form formGroupName="bookingForm" class="booking-form" *ngIf="getReference and !bookAslot and !cancelSlot">
-  <h2>Get My Reference</h2>
-  <div class="form-group">
-    <label for="identification">Type of Identification</label>
-    <select id="identification" formControlName="identification" class="form-control">
-      <option value=""></option>
-      <option value="id">ID</option>
-      <option value="passport">Passport</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="idNumber">ID/passport number</label>
-    <input id="id-number" type="text" formControlName="idNumber" class="form-control">
-  </div>
-  <div class="buttons">
-    <button type="submit" class="btn btn-primary">Get Reference</button>
-  </div>
-</form>
-<form formGroupName="bookingForm" class="booking-form" *ngIf="cancelSlot and !bookAslot and !getReference">
-  <h2>Cancel Booked Slot</h2>
+<form formGroupName="bookingForm" class="booking-form" *ngIf="cancelSlot || getReference">
+  <h2 *ngIf="cancelSlot">Cancel Booked Slot</h2>
+  <h2 *ngIf="getReference">Get My Slot</h2>
+
   <div class="form-group">
     <label for="identification">Type of Identification</label>
     <select id="identification" formControlName="identification" class="form-control">
@@ -64,6 +48,10 @@
       <label for="idNumber">ID/passport number</label>
       <input id="id-number" type="text" formControlName="idNumber" class="form-control">
     </div>
+  </div>
+  <div class="buttons">
+    <button type="submit" class="btn btn-primary" *ngIf="cancelSlot">Cancel Slot</button>
+    <button type="submit" class="btn btn-primary" *ngIf="getReference">Get Slot</button>
   </div>
 </form>
 <form formGroupName="bookingForm" class="booking-form" *ngIf="bookAslot and !getReference and !cancelSlot">
