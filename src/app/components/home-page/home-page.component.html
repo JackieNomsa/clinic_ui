@@ -33,7 +33,7 @@
     </div>
   </div>
 </div>
-<form [formGroup]="retrieveForm" (ngSubmit)="cancelSlot ? getSlotDetails() : getCurrentSlotDetails()"
+<form [formGroup]="retrieveForm" (ngSubmit)="cancelSlot ? cancelBookedSlot() : getCurrentSlot()"
  class="booking-form" *ngIf="cancelSlot || getReference">
   <h2 *ngIf="cancelSlot">Cancel Booked Slot</h2>
   <h2 *ngIf="getReference">Get My Slot</h2>
@@ -55,7 +55,7 @@
     <button type="submit" class="btn btn-primary" *ngIf="getReference">Get Slot</button>
   </div>
 </form>
-<form [formGroup]="bookingForm" (ngSubmit)="submitSlotBooking()" class="booking-form" *ngIf="bookAslot and !getReference and !cancelSlot">
+<form [formGroup]="bookingForm" (ngSubmit)="bookSlot()" class="booking-form" *ngIf="bookAslot and !getReference and !cancelSlot">
   <h2>Book A Slot </h2>
   <div class="form-group">
     <label for="first-name">First Name</label>
