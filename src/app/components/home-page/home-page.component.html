@@ -33,13 +33,14 @@
     </div>
   </div>
 </div>
-<form formGroupName="bookingForm" class="booking-form" *ngIf="cancelSlot || getReference">
+<form [formGroup]="retrieveForm" (ngSubmit)="cancelSlot ? getSlotDetails() : getCurrentSlotDetails()"
+ class="booking-form" *ngIf="cancelSlot || getReference">
   <h2 *ngIf="cancelSlot">Cancel Booked Slot</h2>
   <h2 *ngIf="getReference">Get My Slot</h2>
 
   <div class="form-group">
     <label for="identification">Type of Identification</label>
-    <select id="identification" formControlName="identification" class="form-control">
+    <select id="identification" formControlName="idType" class="form-control">
       <option value=""></option>
       <option value="id">ID</option>
       <option value="passport">Passport</option>
@@ -50,11 +51,11 @@
     </div>
   </div>
   <div class="buttons">
-    <button type="submit" class="btn btn-primary" *ngIf="cancelSlot">Cancel Slot</button>
+    <button type="submit" class="btn btn-primary" *ngIf="cancelSlot" [disabled]="!retrieveForm.valid">Cancel Slot</button>
     <button type="submit" class="btn btn-primary" *ngIf="getReference">Get Slot</button>
   </div>
 </form>
-<form formGroupName="bookingForm" class="booking-form" *ngIf="bookAslot and !getReference and !cancelSlot">
+<form [formGroup]="bookingForm" (ngSubmit)="submitSlotBooking()" class="booking-form" *ngIf="bookAslot and !getReference and !cancelSlot">
   <h2>Book A Slot </h2>
   <div class="form-group">
     <label for="first-name">First Name</label>
@@ -66,7 +67,7 @@
   </div>
   <div class="form-group">
     <label for="identification">Type of Identification</label>
-    <select id="identification" formControlName="identification" class="form-control">
+    <select id="identification" formControlName="idType" class="form-control">
       <option value=""></option>
       <option value="id">ID</option>
       <option value="passport">Passport</option>
@@ -85,7 +86,7 @@
     <input type="tel" id="phone" name="phone" pattern="[0]{1}[1-9]{2}[0-9]{3}[0-9]{4}" formControlName="phone" class="form-control">
   </div>
   <div class="buttons">
-    <button type="submit" class="btn btn-primary">Book A Slot</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!bookingForm.valid">Book A Slot</button>
   </div>
 </form>
 <div style="height:3em;"></div>

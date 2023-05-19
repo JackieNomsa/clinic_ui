@@ -13,7 +13,16 @@ export class HomePageComponent {
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     idNumber: new FormControl(''),
+    idType: new FormControl(''),
+    dateOfBirth: new FormControl(''),
+    phone: new FormControl(''),
+
   });
+  
+  retrieveForm = new FormGroup({
+    idNumber: new FormControl(''),
+    idType: new FormControl('')
+    });
 
   bookAslot: boolean = false;
   getReference: boolean = false;
@@ -26,7 +35,7 @@ export class HomePageComponent {
     this.getReference = false;
     this.cancelSlot = false;
     this.home = false;
-    console.log(this.bookAslot)
+    console.log(this.bookAslot);
   }
 
   public getReferenceToogle() :void{
@@ -34,7 +43,7 @@ export class HomePageComponent {
     this.bookAslot = false;
     this.cancelSlot = false;
     this.home = false;
-    console.log(this.getReference)
+    console.log(this.getReference);
   }
 
   public cancelSlotToogle() :void{
@@ -56,9 +65,17 @@ export class HomePageComponent {
     
   }
 
+  public getSlotDetails(){
+
+  }
+
   public cancelBookedSlot(id: string){
     //validate id, check if slot exists and cancel it, return error if does not exist
     // if success should inform user that slot is cancelled and if need be they can start booking from scratch
+
+  }
+
+  public getCurrentSlotDetails(){
 
   }
 
