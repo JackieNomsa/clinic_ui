@@ -16,9 +16,9 @@ export class HomePageComponent {
   });
 
   bookAslot: boolean = false;
-  getReference: boolean = false;  
-  cancelSlot: boolean = false;  
-  home: boolean = true
+  getReference: boolean = false;
+  cancelSlot: boolean = false;
+  home: boolean = true;
 
   
   public bookASlotToogle() :void{
@@ -41,7 +41,7 @@ export class HomePageComponent {
     this.cancelSlot = true;
     this.bookAslot = false;
     this.getReference = false;
-    this.home = false
+    this.home = false;
   }
 
   public submitSlotBooking(){
@@ -66,6 +66,5 @@ export class HomePageComponent {
     //validate id, check if slot with id exixts esle return error
     //if successful should display id, name, date and time to user
   }
-
-
+  
 }
